@@ -45,13 +45,10 @@ public class CarController : ControllerBase
         return Ok(result);
     }
 
-    [HttpPut("{id}", Name = "Update")]
-    public ActionResult<Car> Update(int id, [FromBody] Car car)
+    [HttpPut( Name = "Update")]
+    public ActionResult<Car> Update( [FromBody] Car car)
     {
-        if (id != car.Id)
-        {
-            return BadRequest("Id eşleşmiyor");
-        }
+       
         var updatedCar = carService.Update(car);
         if (updatedCar == null)
         {

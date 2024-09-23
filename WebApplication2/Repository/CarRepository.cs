@@ -66,21 +66,21 @@ public class CarRepository : CommonRepository<Car>
 
     public override Car Update(Car updated)
     {
-        var newCar = cars.FirstOrDefault(c => c.Id == updated.Id);
-        if (newCar != null)
+        var car = cars.FirstOrDefault(c => c.Id == updated.Id);
+        if (car != null)
         {
-            newCar.ColorId = updated.ColorId;
-            newCar.FuelId = updated.FuelId;
-            newCar.TransmissionId = updated.TransmissionId;
-            newCar.CarState = updated.CarState;
-            newCar.KiloMeter = updated.KiloMeter;
-            newCar.ModelYear = updated.ModelYear;
-            newCar.Plate = updated.Plate;
-            newCar.BrandName = updated.BrandName;
-            newCar.ModelName = updated.ModelName;
-            newCar.DailyPrice = updated.DailyPrice;
+            car.ColorId = updated.ColorId;
+            car.FuelId = updated.FuelId;
+            car.TransmissionId = updated.TransmissionId;
+            car.CarState = updated.CarState;
+            car.KiloMeter = updated.KiloMeter;
+            car.ModelYear = updated.ModelYear;
+            car.Plate = updated.Plate;
+            car.BrandName = updated.BrandName;
+            car.ModelName = updated.ModelName;
+            car.DailyPrice = updated.DailyPrice;
 
-            return newCar;
+            return car;
         }
         return null;
     }
